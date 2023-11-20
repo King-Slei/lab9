@@ -1,0 +1,18 @@
+Question 1: What authentication scheme is used by default in Django Rest Framework's browsable API? How is this managed?
+Django Rest Framework's browsable API uses Session Authentication by default. This authentication scheme relies on Django sessions to authenticate users, with the SessionAuthentication class included in the default authentication classes specified in DRF settings. 
+Users log in through the browsable API, and subsequent requests include a session key for authentication, with the entire process managed by the underlying Django framework.
+
+Question 2: What authentication scheme is used by httpie when querying with the -a or --auth option flag?
+HTTPie uses Basic Authentication when querying with the -a or --auth option flag.
+
+Question 3: What is the difference between Session Authentication and Token Authentication? How is Token Authentication an improvement over Basic Authentication?
+Session Authentication relies on server-side state, using a session identifier stored in a cookie, while Token Authentication is stateless, involving the exchange of tokens between the client and server for authentication. Token Authentication is an improvement over Basic Authentication as it provides enhanced security, supports revocation and expiration, and offers flexibility with additional user claims, all without the need to send credentials with every request.
+
+Question 4: Provide a high level summary of what happens during an OAuth2 authentication flow. For instance: bitbucket.org > Log In > Log in with Google. What happens when I click "Log in with Google"?
+During an OAuth2 authentication flow, when a user clicks "Log in with Google" on a website like bitbucket.org, 
+the application redirects the user to Google's authorization server, where the user is presented with a consent screen specifying the requested permissions. 
+If the user consents, Google issues an authorization code, which the application exchanges for an access token by making a secure request to the authorization server. 
+The application can then use the access token to access the user's resources on the resource server, facilitating secure and delegated authentication.
+
+Question 5: Please provide a link to your code.
+https://github.com/King-Slei/authentication-lab
